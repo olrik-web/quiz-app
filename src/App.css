@@ -1,7 +1,45 @@
 h1 {
-    text-align: center;
+    color: blue;
+    font-size: 36pt;
 }
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid aquamarine;
+    border-radius: 10px;
+    border-spacing: 0px;
+    background-color: aquamarine;
+}
+.category {
+    background-color: aquamarine;
+    font-size: 26pt;
+    padding: 30px;
+    padding-right: 300px;
+    padding-left: 300px;
+    margin: 0px;
+    /* padding: 0px; */
+    
+}
+h3 {
+    font-size: 20pt;
+    font-weight: bold;
+}
+.question {
+    border-bottom: 3px solid black;
+    padding-bottom: 30px;
+}
+.answer {
+    border: 2px solid grey;
+    background-color: #F5F5F5;
+    border-collapse: collapse;
+}
+
+button {
+    margin-bottom: 10px;
 }
