@@ -1,5 +1,5 @@
-import './app.css';
-import React, { useEffect, useState } from "react";
+import './App.css';
+import React, { useEffect, useState } from 'react';
 
 const questions = [
   {
@@ -97,7 +97,7 @@ const questions = [
 },
 {
   "id": 4,
-  "category": "Technology",
+  "category": "TECHNOLOGY",
   "field": "Mobile phones",
   "points": 15,
   "question": "What year was the very first model of the iPhone released?",
@@ -128,7 +128,7 @@ const questions = [
 },
 {
   "id": 5,
-  "category": "Geography",
+  "category": "GEOGRAPHY",
   "field": "Europe",
   "points": 5,
   "question": "What is the capital of Denmark?",
@@ -159,7 +159,7 @@ const questions = [
 },
 {
   "id": 6,
-  "category": "Monarchy",
+  "category": "MONARCHY",
   "field": "Europe",
   "points": 15,
   "question": "What is the name of the Queen of Denmark?",
@@ -190,7 +190,7 @@ const questions = [
 },
 {
   "id": 7,
-  "category": "Geography",
+  "category": "GEOGRAPHY",
   "field": "World",
   "points": 13,
   "question": "How many time zones are in Russia?",
@@ -221,7 +221,7 @@ const questions = [
 },
 {
   "id": 8,
-  "category": "Flags of the World",
+  "category": "FLAGS",
   "field": "World",
   "points": 15,
   "question": "How many stripes are on the flag of the United States?",
@@ -283,7 +283,7 @@ const questions = [
 },
 {
   "id": 10,
-  "category": "Movies and Entertainment",
+  "category": "MOVIES AND ENTERTAINMENT",
   "field": "Hollywood Stars",
   "points": 5,
   "question": "What is the amount of movies in which Nicolas Cage is credited as of April 2021?",
@@ -318,11 +318,11 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  // const max_points = 0;
+  let max_points = 0;
 
-  // questions.forEach((question) => {
-  //   max_points += question.points;
-  // });
+  questions.forEach((question) => {
+    max_points += question.points;
+  });
 
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect) {
@@ -377,7 +377,7 @@ function App() {
 
       {showScore ? (
         <div className="score-section">
-          <p> You scored {score} points. </p>
+          <p> You scored {score} out of {max_points} points. </p>
           <div id="resultTable"> </div>
 
         </div>
@@ -387,6 +387,7 @@ function App() {
           <tr>
             <td >
               <h2 className="category">{questions[currentQuestion].category}</h2>
+              <h3>{questions[currentQuestion].field}</h3>
               <p>Points: {questions[currentQuestion].points}</p>
               {/* <p>Question {question{currentQuestion}}</p> */}
             </td>
@@ -408,7 +409,7 @@ function App() {
             <td>
               Information: <p id="info"></p>
               <p>Source: <a id="link" href="">Link</a></p>
-
+                
             </td>
           </tr>
           <tr>
